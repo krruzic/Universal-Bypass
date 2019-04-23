@@ -610,7 +610,7 @@ if(document instanceof HTMLDocument)
 			})
 			hrefBypass(/b[o]*(.|st)*(st|gg|ink)/,()=>{
 				if (document.querySelector(".complete_btn").attributes["data-href"] !== undefined) {
-					safelyNavigate(atob(atob(document.querySelector(".complete_btn").attributes["data-href"])))
+					safelyNavigate(atob(atob(document.querySelector(".complete_btn").attributes["data-href"].nodeValue)))
 				} else {
 					safelyNavigate(atob(document.querySelector(".complete_btn")
 								.attributes["data-h"+location.pathname.toString().substr(1)]
