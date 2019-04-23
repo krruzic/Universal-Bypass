@@ -609,8 +609,13 @@ if(document instanceof HTMLDocument)
 				}
 			})
 			hrefBypass(/b[o]*(.|st)*(st|gg|ink)/,()=>{
-				let b=atob(atob(document.querySelector("complete_btn").attributes["data-href"])))
-                                safelyNavigate(b.href)
+				if (document.querySelector(".complete_btn").attributes["data-href"] !== undefined) {
+					safelyNavigate(atob(atob(document.querySelector(".complete_btn").attributes["data-href"])))
+				} else {
+					safelyNavigate(atob(document.querySelector(".complete_btn")
+								.attributes["data-h"+location.pathname.toString().substr(1)]
+								.nodeValue))
+				}
 			})
 			domainBypass("runtyurl.com",()=>{
 				let b=document.getElementById("go_next")
