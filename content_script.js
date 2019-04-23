@@ -608,7 +608,7 @@ if(document instanceof HTMLDocument)
 					document.querySelector("form").submit()
 				}
 			})
-			hrefBypass(/b[o]*(.|st)*(st|gg|ink)/,()=>{
+			hrefBypass(/b(st|ooo|oost)+\.(gg|st|ink)/,()=>{
 				if (document.querySelector(".complete_btn").attributes["data-href"] !== undefined) {
 					safelyNavigate(atob(atob(document.querySelector(".complete_btn").attributes["data-href"].nodeValue)))
 				} else {
