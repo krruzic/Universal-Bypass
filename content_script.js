@@ -608,6 +608,10 @@ if(document instanceof HTMLDocument)
 					document.querySelector("form").submit()
 				}
 			})
+			hrefBypass(/b[o]*(.|st)*(st|gg|ink)/,()=>{
+				let b=atob(atob(document.querySelector("complete_btn").attributes["data-href"])))
+                                safelyNavigate(b.href)
+			})
 			domainBypass("runtyurl.com",()=>{
 				let b=document.getElementById("go_next")
 				if(b&&isGoodLink(b.href))
